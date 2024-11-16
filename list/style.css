@@ -98,7 +98,7 @@ align-content: center;
 margin-right: auto;
 text-align: center;
 margin-top: 20px;
-background-color: #182d8b;
+background-color: #d78623;
 border-radius: 50px;
 color: white;
 padding: 10px;
@@ -115,7 +115,7 @@ font-weight: bold;
     
         width: 48px;
         height: 48px;
-        background:#182d8b;
+        background:#d78623;
         --c:no-repeat linear-gradient(#000 0 0);
         --s:18px 18px;
         -webkit-mask:
