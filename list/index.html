@@ -228,7 +228,7 @@ console.log(theadth)
   
     const searchdata = document.querySelector('.input-group input');
     if(searchdata.value==""){
-      console.log(r[k])
+      
       var detail = createtable(r[k]);
       details = details +"<tr>" +detail+"</tr>";
     }
@@ -244,11 +244,24 @@ if (tdata.includes(sdata)){
 
     
     function createtable(r){
+      
       var detail ="";
-      for(var j=1; j<r.length;j++){
-       detail =
+      for(var j=0; j<r.length;j++){
+        console.log(r[j])
+        var value = String (r[j]);
+        console.log(value)
+        if (value.includes("drive.google.com")){
+          var vdetail =
+`<td><a href="`+r[j]+`">View</a></td>
+`;
+        }
+        else{
+          var vdetail =
 `<td>`+r[j]+`</td>
 `;
+        }
+
+detail += vdetail
       }
        return detail;
       }

@@ -40,14 +40,16 @@ border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
 }
-form button {
+form button, a {
+height: 20px;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     color:white;
     background: #d78623;
     border-radius:5px;
     border: none; 
     font-size: 18px;
+    text-decoration: none;
     
 }
 .q{
