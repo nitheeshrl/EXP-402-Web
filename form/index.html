@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+
+    <title id="formtitle">EXP 402 Experiential Learning II</title>  
+    
+    <link rel="stylesheet" href="style.css" />
+  
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.pngd" alt="">
+</div>
+<div>
+<h1>EXP 402 Experiential Learning II</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+
+    <form id="form" class="container m-4 pl-4" method="POST">    
+
+<p style="text-align: justify; " id="Form Description">The objective of the course is to develop unique and innovative products by unlocking the potential of Forgotten Foods and Neglected Crops.</p>
+<br>
+<h3 style="text-align: center; " id="Form Name">Group Product Entry</h3>
+
+
+
+
+  <section id="namesection">
+<div id="formquestions">
+  
+  <div class="form-element" >
+        <span class="q">Team Name *</span>
+         <span></span>
+   <input required type="text" name="Team Name"  placeholder="Enter the Team Name"/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Team Leader  *</span>
+         <span></span>
+   <input required type="text" name="Team Leader "  placeholder="Enter the Team Leader "/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Team members  *</span>
+         <span></span>
+  <textarea  required  name="Team members "  placeholder="Enter the Team members "/></textarea>
+   
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Team Leader email ID  *</span>
+         <span></span>
+   <input required type="text" name="Team Leader email ID "  placeholder="Enter the Team Leader email ID "/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Team Leader Phone no  *</span>
+         <span></span>
+   <input required type="text" name="Team Leader Phone no "  placeholder="Enter the Team Leader Phone no "/>
+    </div>
+
+<div class="form-element radio-buttons">
+<span class="q">Team product  *</span>
+<span></span>
+<select name="Team product "  required  placeholder="Select Team product ">
+  <option value="">Select Team product </option>
+
+<option value='Mahua'>Mahua</option>
+
+<option value='Tamarind '>Tamarind </option>
+
+<option value='Tamarind Seed '>Tamarind Seed </option>
+
+<option value='Mudavattukal Kilangu'>Mudavattukal Kilangu</option>
+
+<option value='Foxtail Millet'>Foxtail Millet</option>
+
+<option value='Red Rice'>Red Rice</option>
+
+<option value='Kodo Millet'>Kodo Millet</option>
+
+<option value='Rose petals '>Rose petals </option>
+
+<option value='Pearl millet '>Pearl millet </option>
+
+<option value='Black rice'>Black rice</option>
+
+<option value='Moringa Leaves'>Moringa Leaves</option>
+
+<option value='Quinoa grain'>Quinoa grain</option>
+</select>
+</div>
+
+<div class="form-element radio-buttons">
+<span class="q">Theme *</span>
+<span></span>
+<select name="Theme"  required  placeholder="Select Theme">
+  <option value="">Select Theme</option>
+
+<option value='Forgotten Food '>Forgotten Food </option>
+
+<option value='Neglected Crops '>Neglected Crops </option>
+</select>
+</div>
+
+<div class="form-element">
+<span class="q">List of ingredients recipe and method of preparation  *</span>
+<span>Give the list and recipe in a single Pdf file</span>
+<input required type="file" accept=".PDF,.pdf" onclick="formfileupload(this)"/>
+<input type="hidden" name="List of ingredients recipe and method of preparation  D.link" class="16EqBGKlLD7tf92Yb0rliLVZ3psuFxVNG" value=""/>
+</div>
+
+<div class="form-element">
+<span class="q">Upload product preparation photos </span>
+<span></span>
+<input  type="file" accept=".JPG,.jpg,.JPEG,.jpeg,.PNG,.png" onclick="formfileupload(this)"/>
+<input type="hidden" name="Upload product preparation photos D.link" class="14Z2t-eXhmp5Q0EdABbzwQfVWV7x9V9o-" value=""/>
+</div>
+
+<div class="form-element">
+<span class="q">Upload final product photo *</span>
+<span></span>
+<input required type="file" accept=".JPG,.jpg,.JPEG,.jpeg,.PNG,.png" onclick="formfileupload(this)"/>
+<input type="hidden" name="Upload final product photo D.link" class="1tC708wdW5hP8zp08PlwpVSqx_o1PFgld" value=""/>
+</div>
+
+<div class="form-element" >
+  <label for="Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.)">
+<input
+required
+name="Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.)"
+type="checkbox"
+value="Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.)"
+
+/>
+<span>Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.) *</span>
+</label>
+    </div>
+
+  </div>
+
+<button style="margin-top: 20px;" type="submit" id="bt"> 
+Submit
+</button> 
+</section>
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+  </div> 
+</div>
+<script>
+  let form = document.querySelector("form");
+form.addEventListener('submit',()=>{ {
+  document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt").style.display="none";
+}})
+  
+document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) { 
+     
+          if (pair[0] !== "file"){
+            
+          
+          keyValuePairs.push(pair[0] + "=val=" + pair[1]);
+console.log(pair[0])
+        }}
+
+        var formDataString = keyValuePairs.join("=namff=");
+console.log(formDataString)
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbxW9LG5yz3NG6s9rUT9lEOuMOVrlLm-b2sX56ftirXLIUSoCmfyEA9_xPLc1-3YHQyAUQ/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString+"=sheetid="+"1WIiF4z5gZCXtT8h4lASb_8IGBr1umRDg5eJZedN-cww",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+
+          .then(function (response) {
+
+            // Check if the request was successful
+            if (response) {
+         
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(async function (data) {
+            const result1 = await data.json();
+            console.log(result1.data2);
+            if (result1.data2 == "accept"){
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);}
+            else if (result1.data2 == "reject"){
+              window.location='reject.html';
+            }
+          })
+
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+
+
+
+      function refreshwin(){
+        console.log("ok")
+        window.location = window.location.href;
+      }
+
+
+</script>
+<script src="script.js  "></script>
+<script>
+  function checkboxvalue(button){
+    var value ="";
+    var checks = button.parentElement.parentElement.children;
+    for(var i= 2; i<checks.length-1;i++){
+      if(checks[i].children[0].checked==false&&checks[i].children[0].required){
+        for(var f= 2; f<checks.length-1;f++){
+        if(checks[f].children[0].checked){
+        checks[i].children[0].required=false;
+        checks[f].children[0].required=true;
+        }
+      }
+      }
+      
+      if(checks[i].children[0].checked){
+        if (value ==""){
+     
+          if(checks[i].children[0].value == "Other"&&button.type=="checkbox"){
+       
+            if(checks[i].children[4].type=="hidden"){
+              console.log(checks[i].children[0].value)
+              checks[i].children[4].type="text";
+              checks[i].children[4].required = true;
+            }
+
+        }
+        else if (checks[i].children[0].value !== "Other"){
+          value += checks[i].children[0].value;
+        }
+    
+        if( checks[i].children.length==5){
+        if(checks[i].children[4].type=="text"&&checks[i].children[4].value!==""){
+          value +=checks[i].children[4].value;
+          checks[i].children[0].checked = true
+        }
+      }
+        }
+        else{
+     
+          if(checks[i].children[0].value == "Other"&&button.type=="checkbox"){
+ 
+            if(checks[i].children[4].type=="hidden"){
+              console.log(checks[i].children[0].value)
+              checks[i].children[4].type="text";
+              checks[i].children[4].required = true;
+            }
+
+         
+        }
+        else if (checks[i].children[0].value !== "Other"){
+          value += ", "+checks[i].children[0].value;
+        }
+ 
+        if( checks[i].children.length==5){
+        if(checks[i].children[4].type=="text"&&checks[i].children[4].value!==""){
+          value += ", "+checks[i].children[4].value;
+          checks[i].children[0].checked = true
+        }
+        }
+      }
+
+      }
+      else if(checks[i].children[0].value == "Other"&&button.type=="checkbox"){
+        
+        checks[i].children[4].type="hidden";
+        checks[i].children[4].value="";
+      }
+    }
+    console.log( checks[checks.length-1])
+    console.log(checks[checks.length-1].value)
+    checks[checks.length-1].value = value
+    console.log(checks[checks.length-1].value)
+  }
+  </script>
+  <script>
+    function formfileupload(button){
+    let file1 = button;
+
+    let fileurl1 = button.parentElement.children[3];
+    var fol = fileurl1.className;
+    file1.addEventListener('change',()=>{
+    let fr = new FileReader();
+    console.log(file1.value)
+    var rawformats = file1.accept;
+    console.log(rawformats)
+var formats = rawformats.split(",");
+console.log(formats)
+var supformat ="";
+for(var i=0;i<formats.length;i++){
+  if(i==formats.length-1){
+    supformat+=`file1.value.includes("`+formats[i]+`")`;
+  }
+  else{
+    supformat+=`file1.value.includes("`+formats[i]+`")||`;
+  }
+}
+console.log(supformat)
+    if (supformat){
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("load").style.display="initial";
+            document.getElementById("message").textContent="Uploading....";
+            fr.addEventListener('loadend',()=>{
+                let res = fr.result;
+                let v = fileurl1.value.replace("/"+fol,"");
+                let folder = "15GgsPpNztp41g7Sw7s7LOT0vhnYnViei";
+        
+                let spt = res.split("base64,")[1];
+                let obj = {
+                    base64:spt,
+                    type:file1.files[0].type,
+                    name:file1.files[0].name,
+                    folder,
+                    v
+        
+                }
+                fetch("https://script.google.com/macros/s/AKfycbzjsZZ7VB5r1_XZUhWvkyDUDIvQM7qVQYu7gtZhChTMhiAyjfXGuHAQg21flXWsg-IOSg/exec",{
+                    method:"POST",
+                    body:JSON.stringify(obj)
+                })
+                .then(r=>r.text())
+          
+                .then(data=>fileurl1.value=(data+"/"+fol))
+                .then(data=>console.log(fileurl1.value)&(onuploadcomplete ()))
+                .then(console.log(v) )
+            })
+            fr.readAsDataURL(file1.files[0])
+                 
+    }
+    else{
+        alert("Upload the file in correct format");
+        button.value="";
+    }
+    }
+) 
+
+}
+
+function onuploadcomplete (){
+
+    document.getElementById("loader").style.display="none"; 
+    document.getElementById("message").textContent="Upload Successful";
+    setTimeout(function () { document.getElementById("load").style.display="none"; },2000);
+}
+</script>
+</section>
+</body>
+</html>

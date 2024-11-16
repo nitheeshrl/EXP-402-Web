@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Group Product List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style 1.css" />
+    <link rel="stylesheet" type="text/css" href="style 2.css">
+    <style>
+         table .approve{
+            border-radius: 20px;
+            padding: 10px;
+            color: white;
+            font-weight: bolder;
+    background-color: green;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+ table .decline{
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    background-color: red;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .tablebee{
+    display: none;
+}
+.btn{
+    background-color:#182d8b;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .btn1{
+    background-color:#182d8b;
+height: 40px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding:12px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+    </style>
+</head>
+
+<body>
+
+  <section class="header">
+    <div>
+    <img src="white_logo.png" alt="">
+    </div>
+    <div>
+    <h1>EXP 402 Experiential Learning II</h1>
+    </div>
+    </section>
+    <main style="margin-top: 30px;" class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Group Product List</h1>
+
+            <div class="input-group">
+                <input  type="search" placeholder="Search..." >
+                <img src="images/search.png" alt="">
+            </div>
+
+        </section>
+
+        <section id="tablebee" class="tablebee">         
+          <section  class="table__body" >
+      
+            
+            
+                  <table  id="tabdetails">
+
+                </table>
+         
+          </section>
+      </section>  
+
+    <section class="msg" >
+
+        <h1 style="text-align: center;"></h1>
+        <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+            <div ></div> <span id = "status"></span></p></div>
+            </p>
+            </section>
+            <section style="height: 100px; display: flex;justify-content: center;">
+      
+            </section>
+    </main>
+    <div id="load" class="load" > 
+        <div class="loader" id="loader"> 
+      
+          </div> 
+          <div
+            id="message"
+          class="message"
+          style="width: 350px;"
+            ></div>
+        </div>      
+  
+    <div class="popup" id="popup-1">
+ 
+        <div class="overlay"></div>
+    
+        <div class="content">
+    
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+    
+        <h1 style="margin-top: 50px;">Confirm Update Approval</h1>
+    
+        <p style="margin-bottom: 40px;">Are you sure you wish to approve the Brochure details update? </p>
+        <div >
+            <input id="aid" type="hidden" value="">
+    <a class="btn" id="apbt" onclick="approve()">Confirm</a>
+    <a class="btn" onclick="togglePopup()">Cancel</a>
+        </div>
+        </div>
+    
+        </div>
+    <div class="popup" id="popup-2">
+
+        <div class="overlay"></div>
+    
+        <div class="content" style="height:400px;">
+    
+        <div class="close-btn" onclick="togglePopup2()">&times;</div>
+    
+        <h1 style="margin-top: 50px;">Confirm Update Decline</h1>
+    
+        <p style="margin-bottom: 40px;">Are you sure you wish to decline the Brochure details update? </p>
+        <div >
+            <div class="form-element" style=" flex-direction: column;align-items: flex-start; width: 100%;margin-bottom: 40px;">
+                <span class="q" >Reason for decline</span>
+                <input type="text" name="Reason" id="Reason" style="width: 100%;" placeholder="Enter the reason" />
+                </div>
+                <input id="did" type="hidden" value="">
+    <a class="btn" id="decbt" onclick="decline()" style="background-color: red;">Decline</a>
+    <a class="btn" onclick="togglePopup2()">Cancel</a>
+        </div>
+        </div>
+    
+        </div>
+    <script src="script.js"></script>
+ <script>
+        function approvePopup(id){
+            console.log("ok")
+    document.getElementById("popup-1").classList.toggle("active");
+    document.getElementById("aid").value = id;
+    
+    }
+    function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+    }
+    function declinePopup(id){
+        console.log("ok")
+    document.getElementById("popup-2").classList.toggle("active");
+    document.getElementById("did").value = id;
+    
+    }
+    function togglePopup2(){
+    document.getElementById("popup-2").classList.toggle("active");
+    }
+          
+    document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Fetching requests....";
+            function fetchd (){
+       console.log("fetch")
+       var details ="";
+       fetch(
+    
+    "https://script.google.com/macros/s/AKfycbwvEUmJ6EuyT9obS4yArsV10S7eIPyQj_DOnQ53-gDf7Ry5Ayrwr7q6-5Q8nrYHamkJ/exec",
+    {
+      redirect: "follow",
+      method: "POST",
+      body: "uname",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+    }
+   )
+   
+    .then(function (response) {
+   
+      // Check if the request was successful
+      if (response) {
+   
+        return response; // Assuming your script returns JSON response
+      } else {
+        throw new Error("Failed to fetch.");
+      }
+    })
+    .then(async function (data) {
+   const result1 = await data.json();
+   
+   var r = result1.data2[0];
+   var heads = result1.data2[1][0];
+console.log(r)
+console.log(heads)
+var headth ="" ;
+for(var b=0; b<heads.length;b++){
+var temp =
+`<th><b>`+heads[b]+`</b></th>
+`;
+headth+=temp;
+}
+var theadth = 
+`<thead>
+  `+headth+`
+</thead>
+`;
+console.log(theadth)
+   for(var k=0; k<r.length;k++){
+  
+    const searchdata = document.querySelector('.input-group input');
+    if(searchdata.value==""){
+      var detail = createtable(r[k]);
+      details = details +"<tr>" +detail+"</tr>";
+    }
+    else{
+var tabledata = r[k].join("");
+var tdata =tabledata.toLowerCase();
+var sdata =searchdata.value.toLowerCase();
+if (tdata.includes(sdata)){
+ var detail = createtable(r[k]);
+  details = details +"<tr>" +detail+"</tr>";
+}
+    }
+
+    
+    function createtable(r){
+      var detail ="";
+      for(var j=1; j<r.length;j++){
+       detail =
+`<td>`+r[j]+`</td>
+`;
+      }
+       return detail;
+      }
+      
+
+   }
+   var tdata = 
+`
+<tbody>
+  `+details+`
+</<tbody>
+`;
+console.log(theadth + tdata)
+
+   if (details!==""){
+ console.log(details)
+   document.getElementById("tabdetails").innerHTML = theadth + tdata;
+   document.getElementById("tablebee").style.display = "initial";
+   document.getElementById("status").style.display = "none";
+   }
+   else{
+     document.getElementById("tablebee").style.display = "none";
+       document.getElementById("status").style.display = "initial";
+       document.getElementById("status").textContent = "No Active Update Requests";
+
+   }
+   document.getElementById("loader").style.display="none"; 
+                   document.getElementById("message").textContent = "";
+                   document.getElementById("load").style.display = "none";
+
+  
+   })
+   
+   .catch(function (error) {
+   // Handle errors, you can display an error message here
+   console.error(error);
+   document.getElementById("loader").style.display="none"; 
+   document.getElementById("message").textContent =
+   "Failed to fetch.";
+   document.getElementById("message").style.display = "block";
+   });
+      }
+       fetchd ();
+    
+   
+    </script>
+</body>
+
+</html>
