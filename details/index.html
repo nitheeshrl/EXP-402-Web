@@ -12,8 +12,8 @@
       const value = new URLSearchParams(keyvalues);
       const idvalue = value.get('team');
   function fetcholdd(){
-var data = Array(localStorage.getItem("detaildatas"));
-var heads = Array(localStorage.getItem("detailheads"));
+var data = JSON.parse(localStorage.getItem("detaildatas"));
+var heads = JSON.parse(localStorage.getItem("detailheads"));
 if (heads==null){
 
 }
