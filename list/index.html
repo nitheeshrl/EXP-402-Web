@@ -156,7 +156,7 @@ height: 40px;
     <script src="script.js"></script>
  <script>
         function approvePopup(id){
-            console.log("ok")
+            
     document.getElementById("popup-1").classList.toggle("active");
     document.getElementById("aid").value = id;
     
@@ -165,7 +165,7 @@ height: 40px;
     document.getElementById("popup-1").classList.toggle("active");
     }
     function declinePopup(id){
-        console.log("ok")
+        
     document.getElementById("popup-2").classList.toggle("active");
     document.getElementById("did").value = id;
     
@@ -178,7 +178,7 @@ height: 40px;
             document.getElementById("loader").style.display="block"; 
             document.getElementById("message").textContent = "Fetching Responses....";
             function fetchd (){
-       console.log("fetch")
+       
        var details ="";
        fetch(
     
@@ -212,8 +212,8 @@ height: 40px;
    var sheads = JSON.stringify(heads);
    sessionStorage.setItem("detailheads",sheads);
    sessionStorage.setItem("detaildatas",sr);
-console.log(r)
-console.log(heads)
+
+
 var hindex = heads.findIndex(x => x == "Team Number"); 
 var headth ="" ;
 for(var b=0; b<heads.length;b++){
@@ -228,7 +228,7 @@ var theadth =
  <th><b>Full Info</b></th> 
 </thead>
 `;
-console.log(theadth)
+
    for(var k=0; k<r.length-1;k++){
   
     const searchdata = document.querySelector('.input-group input');
@@ -252,18 +252,34 @@ if (tdata.includes(sdata)){
       
       var detail ="";
       for(var j=0; j<r.length;j++){
-        console.log(r[j])
+        
         var value = String (r[j]);
-        console.log(value)
+        
         if (value.includes("drive.google.com")){
           var vdetail =
 `<td><a href="`+r[j]+`">View</a></td>
 `;
         }
         else{
+          var raw =String (r[j]);
+  
+          if (raw.includes("\n")){
+         
+          
+          
+  var graw  = raw.split("\n");
+     
+     var hhp = graw.join("<br>");
+
           var vdetail =
+`<td>`+hhp+`</td>
+`;
+}
+else{
+  var vdetail =
 `<td>`+r[j]+`</td>
 `;
+}
         }
 
 detail += vdetail
@@ -279,10 +295,10 @@ detail += vdetail
   `+details+`
 </<tbody>
 `;
-console.log(theadth + tdata)
+
 
    if (details!==""){
- console.log(details)
+ 
    document.getElementById("tabdetails").innerHTML = theadth + tdata;
    document.getElementById("tablebee").style.display = "initial";
    document.getElementById("status").style.display = "none";
@@ -310,7 +326,9 @@ console.log(theadth + tdata)
    });
       }
        fetchd ();
-    
+       setInterval(() => {
+        fetchd ();
+  }, 1000)
    
     </script>
 </body>
