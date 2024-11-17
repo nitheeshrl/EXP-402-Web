@@ -5,11 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="widthdevice-width, initial-scale=1">
     <link rel="icon" href="white_logo.png" type="image/x-icon">
-
-    <title id="formtitle">EXP 402 Experiential Learning II</title>  
-    
+    <title id="formtitle">EXP 402 Experiential Learning II</title>      
     <link rel="stylesheet" href="style.css" />
-  
+ <script>
+   const keyvalues = window.location.search;
+      const value = new URLSearchParams(keyvalues);
+      const idvalue = value.get('team');
+  function fetcholdd(){
+var data = localStorage.getItem("detaildatas");
+var heads = localStorage.getItem("detailheads");
+if (heads==null){
+
+}
+var index = heads.findIndex("Team Number")
+  }
+ </script> 
 </head>    
 <body>
 <section class="header">
@@ -21,153 +31,7 @@
 </div>
 </section>
 <section >
-<div class="form-container">
-<script type="text/javascript">var submitted=false </script>
 
-    <form id="form" class="container m-4 pl-4" method="POST">    
-
-<p style="text-align: justify; " id="Form Description">The objective of the course is to develop unique and innovative products by unlocking the potential of Forgotten Foods and Neglected Crops.</p>
-<br>
-<h3 style="text-align: center; " id="Form Name">Group Product Entry</h3>
-
-
-
-
-  <section id="namesection">
-<div id="formquestions">
-  
-  <div class="form-element" >
-        <span class="q">Team Name *</span>
-         <span></span>
-   <input required type="text" name="Team Name"  placeholder="Enter the Team Name"/>
-    </div>
-
-  <div class="form-element" >
-        <span class="q">Team Leader  *</span>
-         <span></span>
-   <input required type="text" name="Team Leader "  placeholder="Enter the Team Leader "/>
-    </div>
-
-  <div class="form-element" >
-        <span class="q">Team members  *</span>
-         <span></span>
-  <textarea  required  name="Team members "  placeholder="Enter the Team members "/></textarea>
-   
-    </div>
-
-  <div class="form-element" >
-        <span class="q">Team Leader email ID  *</span>
-         <span></span>
-   <input required type="text" name="Team Leader email ID "  placeholder="Enter the Team Leader email ID "/>
-    </div>
-
-  <div class="form-element" >
-        <span class="q">Team Leader Phone no  *</span>
-         <span></span>
-   <input required type="text" name="Team Leader Phone no "  placeholder="Enter the Team Leader Phone no "/>
-    </div>
-
-<div class="form-element radio-buttons">
-<span class="q">Team Product Source *</span>
-<span></span>
-<select name="Team Product Source"  required  placeholder="Select Team product ">
-  <option value="">Select Team Product </option>
-
-<option value='Mahua'>Mahua</option>
-
-<option value='Tamarind '>Tamarind </option>
-
-<option value='Tamarind Seed '>Tamarind Seed </option>
-
-<option value='Mudavattukal Kilangu'>Mudavattukal Kilangu</option>
-
-<option value='Foxtail Millet'>Foxtail Millet</option>
-
-<option value='Red Rice'>Red Rice</option>
-
-<option value='Kodo Millet'>Kodo Millet</option>
-
-<option value='Rose petals '>Rose petals </option>
-
-<option value='Pearl millet '>Pearl millet </option>
-
-<option value='Black rice'>Black rice</option>
-
-<option value='Moringa Leaves'>Moringa Leaves</option>
-
-<option value='Quinoa grain'>Quinoa grain</option>
-</select>
-</div>
-<div class="form-element" >
-        <span class="q">Team Product *</span>
-         <span></span>
-   <input required type="text" name="Team product "  placeholder="Enter the Team product"/>
-</div>
-<div class="form-element radio-buttons">
-<span class="q">Theme *</span>
-<span></span>
-<select name="Theme"  required  placeholder="Select Theme">
-  <option value="">Select Theme</option>
-
-<option value='Forgotten Food '>Forgotten Food </option>
-
-<option value='Neglected Crops '>Neglected Crops </option>
-</select>
-</div>
-
-<div class="form-element">
-<span class="q">List of ingredients recipe and method of preparation  *</span>
-<span>Give the list and recipe in a single Pdf file</span>
-<input required type="file" accept=".PDF,.pdf" onclick="formfileupload(this)"/>
-<input type="hidden" name="List of ingredients recipe and method of preparation  D.link" class="16EqBGKlLD7tf92Yb0rliLVZ3psuFxVNG" value=""/>
-</div>
-
-<div class="form-element">
-<span class="q">Upload product preparation photos </span>
-<span></span>
-<input  type="file" accept=".JPG,.jpg,.JPEG,.jpeg,.PNG,.png" onclick="formfileupload(this)"/>
-<input type="hidden" name="Upload product preparation photos D.link" class="14Z2t-eXhmp5Q0EdABbzwQfVWV7x9V9o-" value=""/>
-</div>
-
-<div class="form-element">
-<span class="q">Upload final product photo *</span>
-<span></span>
-<input required type="file" accept=".JPG,.jpg,.JPEG,.jpeg,.PNG,.png" onclick="formfileupload(this)"/>
-<input type="hidden" name="Upload final product photo D.link" class="1tC708wdW5hP8zp08PlwpVSqx_o1PFgld" value=""/>
-</div>
-
-<div class="form-element">
-<span class="q">Group photo upload  *</span>
-<span>Upload your group photo along with product photo</span>
-<input required type="file" accept=".JPG,.jpg,.JPEG,.jpeg,.PNG,.png" onclick="formfileupload(this)"/>
-<input type="hidden" name="Group photo upload  D.link" class="19eSEyzH-RWnBEnXDZp8WoEEayRNdKInV" value=""/>
-</div>
-
-<div class="form-element">
-<span class="q">Upload pdf including different products available *</span>
-<span>The file should mention the details collected on the various products made with your teams source material found around the world</span>
-<input required type="file" accept=".PDF,.pdf" onclick="formfileupload(this)"/>
-<input type="hidden" name="Upload pdf including different products available D.link" class="19ah9djA3gHEGiSmVMTt7lqRJu6e62AzV" value=""/>
-</div>
-
-<div class="form-element" >
-  <label for="Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.)">
-<input
-required
-name="Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.)"
-type="checkbox"
-value="Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.)"
-
-/>
-<span>Declaration (I/We declare that the photos, recipe uploaded here are original and are mine/our own. No copyright related information is present.) *</span>
-</label>
-    </div>
-
-  </div>
-
-<button style="margin-top: 20px;" type="submit" id="bt"> 
-Submit
-</button> 
 </section>
 <div id="load" class="load" > 
   <div class="loader" id="loader"> 
