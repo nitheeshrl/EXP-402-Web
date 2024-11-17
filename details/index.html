@@ -21,7 +21,13 @@ console.log(data)
 var index = data.findIndex(idvalue);
 console.log(index)
 for(var k=0; k<heads.length-1;k++){
-
+var temp =
+`<div style="display: flex;justify-content: space-evenly;">
+  <span style="font-weight: bold;">`+heads[k]+`</span>
+  <span style="font-weight: bold;">:</span>
+  <span>`+data[0][k]+`</span>
+</div>`;
+document.getElementById("details").innerHTML +=temp;
   }
 }
 fetcholdd();
