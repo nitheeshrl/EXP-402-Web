@@ -54,10 +54,10 @@ var index = "";
 index = data.findIndex(x => x[hindex] == idvalue); 
 console.log(index)
 for(var k=0; k<heads.length;k++){
-  var dd =data[hindex][k].toString();
+  var dd =data[index][k].toString();
   if(dd.includes("drive.google.com")){
   if (heads[k].includes("photo")){
-    var url = data[hindex][k].split("/");
+    var url = data[index][k].split("/");
     var temp =
 `<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
@@ -71,7 +71,7 @@ for(var k=0; k<heads.length;k++){
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
  <span style="font-weight: bold;">:</span>
  <div style="width: 45%;">
- <a class="btn" href="`+data[hindex][k]+`" alt="">View PDF</a>
+ <a class="btn" href="`+data[index][k]+`" alt="">View PDF</a>
 </div>
  </div>`;
   }
@@ -81,7 +81,7 @@ for(var k=0; k<heads.length;k++){
 `<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
  <span style="font-weight: bold;">:</span>
- <span style="width: 45%;">`+data[hindex][k]+`</span>
+ <span style="width: 45%;">`+data[index][k]+`</span>
 </div>`;
   }
 
