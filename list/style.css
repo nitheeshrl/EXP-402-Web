@@ -42,7 +42,7 @@ border-radius: 5px;
 }
 form button, a {
 height: 20px;
-    width: 100%;
+    width: 1000px;
     padding: 10px;
     color:white;
     background: #d78623;
@@ -158,8 +158,8 @@ font-weight: bold;
     margin-right: 20px;
     text-decoration: none;
     color: white;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 5px;
 border-color: transparent;
-
+width: 100%;
   }
