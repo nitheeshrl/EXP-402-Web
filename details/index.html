@@ -19,8 +19,16 @@ var heads = JSON.parse(jheads);
 if (heads==null){
 
 }
-console.log(data)
-var index = data.match(/ain/idvalue);
+var hindex = heads.findIndex("Team Number");
+console.log(hindex)
+var index = "";
+data.forEach((element) =>{
+ if(element[hindex]==idvalue){
+  index =element
+ }
+}
+);
+
 console.log(index)
 for(var k=0; k<heads.length-1;k++){
 var temp =
