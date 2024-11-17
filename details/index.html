@@ -64,7 +64,7 @@ for(var k=0; k<heads.length;k++){
   if (heads[k].includes("photo")){
     var url = data[hindex][k].split("/");
     var temp =
-`<div style="display: flex;justify-content: space-evenly;gap:10px;">
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:10px;margin-bottom:10px;">
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
  <span style="font-weight: bold;">:</span>
  <img style="width: 45%;" src="https://drive.google.com/thumbnail?id=`+url[5]+`" alt="">
@@ -72,16 +72,16 @@ for(var k=0; k<heads.length;k++){
   }
   else{
     var temp =
-`<div style="display: flex;justify-content: space-evenly;gap:10px;">
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:10px;margin-bottom:10px;">
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
  <span style="font-weight: bold;">:</span>
- <a style="width: 45%;" href="`+data[hindex][k]+`" alt="">View PDF</a>
+ <a class="btn" style="width: 45%;" href="`+data[hindex][k]+`" alt="">View PDF</a>
 </div>`;
   }
 }
   else{
     var temp =
-`<div style="display: flex;justify-content: space-evenly;gap:10px;">
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:10px;margin-bottom:10px;">
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
  <span style="font-weight: bold;">:</span>
  <span style="width: 45%;">`+data[hindex][k]+`</span>
