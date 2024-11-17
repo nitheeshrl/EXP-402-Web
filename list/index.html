@@ -229,13 +229,13 @@ var theadth =
 </thead>
 `;
 console.log(theadth)
-   for(var k=0; k<r.length;k++){
+   for(var k=0; k<r.length-1;k++){
   
     const searchdata = document.querySelector('.input-group input');
     if(searchdata.value==""){
       
       var detail = createtable(r[k]);
-      details = details +"<tr>" +detail+'<td style="width:100%"><a href="/details/index.html?team='+r[k][hindex]+'">View Details</a></td>'+"</tr>";
+      details = details +"<tr>" +detail+'<td><a href="/details/index.html?team='+r[k][hindex]+'">View Details</a></td>'+"</tr>";
     }
     else{
 var tabledata = r[k].join("");
@@ -243,7 +243,7 @@ var tdata =tabledata.toLowerCase();
 var sdata =searchdata.value.toLowerCase();
 if (tdata.includes(sdata)){
  var detail = createtable(r[k]);
- details = details +"<tr>" +detail+'<td style="width:100%"><a href="/details/index.html?team='+r[k][hindex]+'">View Details</a></td>'+"</tr>";
+ details = details +"<tr>" +detail+'<td><a href="/details/index.html?team='+r[k][hindex]+'">View</a></td>'+"</tr>";
 }
     }
 
