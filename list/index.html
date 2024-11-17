@@ -225,7 +225,7 @@ headth+=temp;
 var theadth = 
 `<thead>
   `+headth+`
- <th><b>View Details</b></th> 
+ <th><b>Full Info</b></th> 
 </thead>
 `;
 console.log(theadth)
@@ -235,7 +235,7 @@ console.log(theadth)
     if(searchdata.value==""){
       
       var detail = createtable(r[k]);
-      details = details +"<tr>" +detail+'<td><a href="/details/index.html?team='+r[k][hindex]+'">View</a></td>'+"</tr>";
+      details = details +"<tr>" +detail+'<td><a href="/details/index.html?team='+r[k][hindex]+'">View Details</a></td>'+"</tr>";
     }
     else{
 var tabledata = r[k].join("");
