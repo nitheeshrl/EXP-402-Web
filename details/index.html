@@ -39,20 +39,65 @@
   const keyvalues = window.location.search;
      const value = new URLSearchParams(keyvalues);
      const idvalue = value.get('team');
- function fetcholdd(){
+     document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Fetching Details....";
+async function fetcholdd(){
    var jdata =sessionStorage.getItem("detaildatas");
    var jheads =sessionStorage.getItem("detailheads");
 var data = JSON.parse(jdata);
 var heads = JSON.parse(jheads);
-if (heads==null){
+if (heads==null ){
 
-}
+       async     function fetchd (){
+       
+       var details ="";
+      await fetch(
+    
+    "https://script.google.com/macros/s/AKfycbwvEUmJ6EuyT9obS4yArsV10S7eIPyQj_DOnQ53-gDf7Ry5Ayrwr7q6-5Q8nrYHamkJ/exec",
+    {
+      redirect: "follow",
+      method: "POST",
+      body: "uname",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+    }
+   )
+   
+    .then(function (response) {
+   
+      // Check if the request was successful
+      if (response) {
+   
+        return response; // Assuming your script returns JSON response
+      } else {
+        throw new Error("Failed to fetch.");
+      }
+    })
+    .then(async function (data) {
+   const result1 = await data.json();
+   
+details = result1.data2
+
+})
+return details;
+      }
+      var dff = await fetchd ();
+      console.log(dff)
+        data = dff[0];
+   heads = dff[1][0];
+
+
+          }
+          console.log(data,heads)
 var hindex = "";
 hindex = heads.findIndex(x => x == "Team Number"); 
 console.log(hindex)
 var index = "";
 index = data.findIndex(x => x[hindex] == idvalue); 
-console.log(index)
+console.log(data[index])
+var finalout ="";
 for(var k=0; k<heads.length;k++){
   var dd =data[index][k].toString();
   if(dd.includes("drive.google.com")){
@@ -84,11 +129,16 @@ for(var k=0; k<heads.length;k++){
  <span style="width: 45%;">`+data[index][k]+`</span>
 </div>`;
   }
+finalout +=temp
 
-document.getElementById("details").innerHTML +=temp;
  }
+ document.getElementById("details").innerHTML =finalout;
+document.getElementById("load").style.display="none";
 }
 fetcholdd();
+setInterval(() => {
+  fetcholdd();
+  }, 1000)
 </script>
 </body>
 </html>
