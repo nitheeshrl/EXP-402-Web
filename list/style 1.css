@@ -40,7 +40,7 @@ body {
 }
 
 main.table {
-    width: 1000px;
+    width: 95vw;
     height: 90vh;
     background-color: white;
 
@@ -128,7 +128,7 @@ main.table {
 
 
 table {
-    width: 100%;
+    width: 90vw;
 }
 
 td img {
