@@ -19,9 +19,13 @@ var heads = JSON.parse(jheads);
 if (heads==null){
 
 }
-console.log(typeof (heads))
-var hhdd = Array(heads)
-var hindex = hhdd.indexof('Team Number');
+var hindex = "";
+heads.forEach((element) =>{
+ if(element=='Team Number'){
+  hindex =element;
+ }
+}
+);
 console.log(hindex)
 var index = "";
 data.forEach((element) =>{
