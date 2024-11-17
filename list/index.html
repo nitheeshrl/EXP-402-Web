@@ -129,7 +129,6 @@ height: 40px;
     <a class="btn" onclick="togglePopup()">Cancel</a>
         </div>
         </div>
-    
         </div>
     <div class="popup" id="popup-2">
 
@@ -215,6 +214,7 @@ height: 40px;
    sessionStorage.setItem("detaildatas",sr);
 console.log(r)
 console.log(heads)
+var hindex = heads.findIndex(x => x == "Team Number"); 
 var headth ="" ;
 for(var b=0; b<heads.length;b++){
 var temp =
@@ -234,7 +234,7 @@ console.log(theadth)
     if(searchdata.value==""){
       
       var detail = createtable(r[k]);
-      details = details +"<tr>" +detail+"</tr>";
+      details = details +"<tr>" +detail+'<td><a href="/details/index.html?team='+r[k][hindex]+'">View</a></td>'+"</tr>";
     }
     else{
 var tabledata = r[k].join("");
@@ -242,7 +242,7 @@ var tdata =tabledata.toLowerCase();
 var sdata =searchdata.value.toLowerCase();
 if (tdata.includes(sdata)){
  var detail = createtable(r[k]);
-  details = details +"<tr>" +detail+"</tr>";
+ details = details +"<tr>" +detail+'<td><a href="/details/index.html?team='+r[k][hindex]+'">View</a></td>'+"</tr>";
 }
     }
 
