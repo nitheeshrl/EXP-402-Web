@@ -20,21 +20,10 @@ if (heads==null){
 
 }
 var hindex = "";
-heads.forEach((element) =>{
- if(element=='Team Number'){
-  hindex =element;
- }
-}
-);
+hindex = heads.findIndex(x => x == "Team Number"); 
 console.log(hindex)
 var index = "";
-data.forEach((element) =>{
- if(element[hindex]==idvalue){
-  index =element
- }
-}
-);
-
+index = data.findIndex(x => x[hindex] == idvalue); 
 console.log(index)
 for(var k=0; k<heads.length-1;k++){
 var temp =
