@@ -216,7 +216,7 @@ height: 40px;
 
 var hindex = heads.findIndex(x => x == "Team Number"); 
 var headth ="" ;
-for(var b=0; b<heads.length;b++){
+for(var b=0; b<heads.length-5;b++){
 var temp =
 `<th><b>`+heads[b]+`</b></th>
 `;
@@ -251,7 +251,7 @@ if (tdata.includes(sdata)){
     function createtable(r){
       
       var detail ="";
-      for(var j=0; j<r.length;j++){
+      for(var j=0; j<r.length-5;j++){
         
         var value = String (r[j]);
         
