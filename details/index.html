@@ -18,6 +18,7 @@
 <h1>EXP 402 Experiential Learning II</h1>
 </div>
 </section>
+
 <section style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
 <div style="padding: 10px;background: white;border-radius: 5px;min-width: 500px;max-width: 900px;width: 100%;" id="details">
 <div style="display: flex;justify-content: space-evenly;">
@@ -57,13 +58,26 @@ console.log(hindex)
 var index = "";
 index = data.findIndex(x => x[hindex] == idvalue); 
 console.log(index)
-for(var k=0; k<heads.length-1;k++){
-var temp =
+for(var k=0; k<heads.length;k++){
+  if (heads[k].includes("photo")){
+    var url = data[hindex][k].split("/");
+    var temp =
+`<div style="display: flex;justify-content: space-evenly;">
+ <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
+ <span style="font-weight: bold;">:</span>
+ <img style="width: 45%;" src="https://drive.google.com/thumbnail?id=`+url[5]+`" alt="">
+ <span>`+data[hindex][k]+`</span>
+</div>`;
+  }
+  else{
+    var temp =
 `<div style="display: flex;justify-content: space-evenly;">
  <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
  <span style="font-weight: bold;">:</span>
  <span style="width: 45%;">`+data[hindex][k]+`</span>
 </div>`;
+  }
+
 document.getElementById("details").innerHTML +=temp;
  }
 }
