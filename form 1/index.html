@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+
+    <title id="formtitle">EXP 402 Experiential Learning II</title>  
+    
+    <link rel="stylesheet" href="style.css" />
+  
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>EXP 402 Experiential Learning II</h1>
+</div>
+</section>
+<section >
+<div class="form-container">
+<script type="text/javascript">var submitted=false </script>
+
+    <form id="form" class="container m-4 pl-4" method="POST">    
+
+<p style="text-align: justify; " id="Form Description">The objective of the course is to develop unique and innovative products by unlocking the potential of Forgotten Foods and Neglected Crops.</p>
+<br>
+<h3 style="text-align: center; " id="Form Name">Unlocking Potential of Neglected Food Crop </h3>
+
+
+
+
+  <section id="namesection">
+<div id="formquestions">
+  <div class="form-element radio-buttons">
+<span class="q">Team Number *</span>
+<span></span>
+<select name="Team Number"  required  placeholder="Select Team Number ">
+<option value="">Select Team Number </option>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+<option value='10'>10</option>
+<option value='11'>11</option>
+<option value='12'>12</option>
+</select>
+</div>
+  <div class="form-element" >
+        <span class="q">English Name *</span>
+         <span></span>
+   <input required type="text" name="English Name"  placeholder="Enter the English Name"/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Scientific Name *</span>
+         <span></span>
+   <input required type="text" name="Scientific Name"  placeholder="Enter the Scientific Name"/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Local Name *</span>
+         <span></span>
+   <input required type="text" name="Local Name"  placeholder="Enter the Local Name"/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Origin *</span>
+         <span></span>
+   <input required type="text" name="Origin"  placeholder="Enter the Origin"/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Main Areas of Cultivation *</span>
+         <span></span>
+  <textarea  required  name="Main Areas of Cultivation"  placeholder="Enter the Main Areas of Cultivation"/></textarea>
+   
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Health benifits *</span>
+         <span></span>
+  <textarea  required  name="Health benifits"  placeholder="Enter the Health benifits"/></textarea>
+   
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Nutritional Information *</span>
+         <span></span>
+  <textarea  required  name="Nutritional Information"  placeholder="Enter the Nutritional Information"/></textarea>
+   
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Challenges in Production *</span>
+         <span></span>
+  <textarea  required  name="Challenges in Production"  placeholder="Enter the Challenges in Production"/></textarea>
+   
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Food processing challenges *</span>
+         <span></span>
+  <textarea  required  name="Food processing challenges"  placeholder="Enter the Food processing challenges"/></textarea>
+   
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Product Name *</span>
+         <span></span>
+   <input required type="text" name="Product Name"  placeholder="Enter the Product Name"/>
+    </div>
+
+  <div class="form-element" >
+        <span class="q">Marketing strategies *</span>
+         <span></span>
+  <textarea  required  name="Marketing strategies"  placeholder="Enter the Marketing strategies"/></textarea>
+   
+    </div>
+
+<div class="form-element">
+<span class="q">Upload file/graph (if any) regarding market strategy *</span>
+<span></span>
+<input required type="file"  onclick="formfileupload(this)"/>
+<input type="hidden" name="Upload file/graph (if any) regarding market strategy D.link" class="1m9m6eIoXeUNAevgAlorzqqA3evFIcO-w" value=""/>
+</div>
+
+  </div>
+
+<button style="margin-top: 20px;" type="submit" id="bt"> 
+Submit
+</button> 
+</section>
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+  </div> 
+</div>
+<script>
+  let form = document.querySelector("form");
+form.addEventListener('submit',()=>{ {
+  document.getElementById("load").style.display="initial";
+  document.getElementById("loader").style.display="block"; 
+  document.getElementById("bt").style.display="none";
+}})
+  
+document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+        document.getElementById("message").textContent = "Submitting..";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("bt").disabled = true;
+
+        // Collect the form data
+        var formData = new FormData(this);
+        var keyValuePairs = [];
+        for (var pair of formData.entries()) { 
+     
+          if (pair[0] !== "file"){
+            
+          
+          keyValuePairs.push(pair[0] + "=val=" + pair[1]);
+console.log(pair[0])
+        }}
+
+        var formDataString = keyValuePairs.join("=namff=");
+console.log(formDataString)
+
+        // Send a POST request to your Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbzWv12qd9QVKyzfZrQT6G5k0IXblNTOE2s2Bby5Z0TdNVLrtczkc_C3TiOmxHKSbmWlgw/exec",
+          {
+            redirect: "follow",
+            method: "POST",
+            body: formDataString+"=sheetid="+"1Ic45OBs2kwUeo5BiQpP84uWgabPVINepHL5rTgq5P9E",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8",
+            },
+          }
+        )
+
+          .then(function (response) {
+
+            // Check if the request was successful
+            if (response) {
+         
+              return response; // Assuming your script returns JSON response
+            } else {
+              throw new Error("Failed to submit the form.");
+            }
+          })
+          .then(async function (data) {
+            const result1 = await data.json();
+            console.log(result1.data2);
+            if (result1.data2 == "accept"){
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);}
+            else if (result1.data2 == "reject"){
+              window.location='reject.html';
+            }
+          })
+
+          .catch(function (error) {
+            // Handle errors, you can display an error message here
+            console.error(error);
+            document.getElementById("message").textContent =
+              "An error occurred while submitting the form.";
+            document.getElementById("message").style.display = "block";
+          });
+      });
+
+
+
+      function refreshwin(){
+        console.log("ok")
+        window.location = window.location.href;
+      }
+
+
+</script>
+<script src="script.js  "></script>
+<script>
+  function checkboxvalue(button){
+    var value ="";
+    var checks = button.parentElement.parentElement.children;
+    for(var i= 2; i<checks.length-1;i++){
+      if(checks[i].children[0].checked==false&&checks[i].children[0].required){
+        for(var f= 2; f<checks.length-1;f++){
+        if(checks[f].children[0].checked){
+        checks[i].children[0].required=false;
+        checks[f].children[0].required=true;
+        }
+      }
+      }
+      
+      if(checks[i].children[0].checked){
+        if (value ==""){
+     
+          if(checks[i].children[0].value == "Other"&&button.type=="checkbox"){
+       
+            if(checks[i].children[4].type=="hidden"){
+              console.log(checks[i].children[0].value)
+              checks[i].children[4].type="text";
+              checks[i].children[4].required = true;
+            }
+
+        }
+        else if (checks[i].children[0].value !== "Other"){
+          value += checks[i].children[0].value;
+        }
+    
+        if( checks[i].children.length==5){
+        if(checks[i].children[4].type=="text"&&checks[i].children[4].value!==""){
+          value +=checks[i].children[4].value;
+          checks[i].children[0].checked = true
+        }
+      }
+        }
+        else{
+     
+          if(checks[i].children[0].value == "Other"&&button.type=="checkbox"){
+ 
+            if(checks[i].children[4].type=="hidden"){
+              console.log(checks[i].children[0].value)
+              checks[i].children[4].type="text";
+              checks[i].children[4].required = true;
+            }
+
+         
+        }
+        else if (checks[i].children[0].value !== "Other"){
+          value += ", "+checks[i].children[0].value;
+        }
+ 
+        if( checks[i].children.length==5){
+        if(checks[i].children[4].type=="text"&&checks[i].children[4].value!==""){
+          value += ", "+checks[i].children[4].value;
+          checks[i].children[0].checked = true
+        }
+        }
+      }
+
+      }
+      else if(checks[i].children[0].value == "Other"&&button.type=="checkbox"){
+        
+        checks[i].children[4].type="hidden";
+        checks[i].children[4].value="";
+      }
+    }
+    console.log( checks[checks.length-1])
+    console.log(checks[checks.length-1].value)
+    checks[checks.length-1].value = value
+    console.log(checks[checks.length-1].value)
+  }
+  </script>
+  <script>
+    function formfileupload(button){
+    let file1 = button;
+
+    let fileurl1 = button.parentElement.children[3];
+    var fol = fileurl1.className;
+    file1.addEventListener('change',()=>{
+    let fr = new FileReader();
+    console.log(file1.value)
+    var rawformats = file1.accept;
+    console.log(rawformats)
+var formats = rawformats.split(",");
+console.log(formats)
+var supformat ="";
+for(var i=0;i<formats.length;i++){
+  if(i==formats.length-1){
+    supformat+=`file1.value.includes("`+formats[i]+`")`;
+  }
+  else{
+    supformat+=`file1.value.includes("`+formats[i]+`")||`;
+  }
+}
+console.log(supformat)
+    if (supformat){
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("load").style.display="initial";
+            document.getElementById("message").textContent="Uploading....";
+            fr.addEventListener('loadend',()=>{
+                let res = fr.result;
+                let v = fileurl1.value.replace("/"+fol,"");
+                let folder = "1NdOcT9i55PSMA0ZxOIyeqDKuXFnMR8Za";
+        
+                let spt = res.split("base64,")[1];
+                let obj = {
+                    base64:spt,
+                    type:file1.files[0].type,
+                    name:file1.files[0].name,
+                    folder,
+                    v
+        
+                }
+                fetch("https://script.google.com/macros/s/AKfycbxfwwlJAQVng3fQtXcKtP7oKhTzNG5gLLmQ1RM9swtS0TvYIcbti9aulC2FWfx3qiZL/exec",{
+                    method:"POST",
+                    body:JSON.stringify(obj)
+                })
+                .then(r=>r.text())
+          
+                .then(data=>fileurl1.value=(data+"/"+fol))
+                .then(data=>console.log(fileurl1.value)&(onuploadcomplete ()))
+                .then(console.log(v) )
+            })
+            fr.readAsDataURL(file1.files[0])
+                 
+    }
+    else{
+        alert("Upload the file in correct format");
+        button.value="";
+    }
+    }
+) 
+
+}
+
+function onuploadcomplete (){
+
+    document.getElementById("loader").style.display="none"; 
+    document.getElementById("message").textContent="Upload Successful";
+    setTimeout(function () { document.getElementById("load").style.display="none"; },2000);
+}
+</script>
+</section>
+</body>
+</html>
