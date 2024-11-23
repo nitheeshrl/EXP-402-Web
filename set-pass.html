@@ -40,7 +40,7 @@
         </a>
       </div>
     </div>
-      <button name="btl" type="submit" onclick="login()" type="button" ><div class="btn-text">Set Password</div></button>
+      <button name="btl" type="submit" onclick="login()" type="button" id="set-btn" ><div class="btn-text">Set Password</div></button>
     </div>
 </section>
 <div id="load" class="load" > 
@@ -52,7 +52,15 @@
     class="message"
       ></div>
   </div> 
-
+  <script>
+    var input = document.getElementById("conPassword");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("set-btn").click();
+      }
+    });
+    </script>
 <script>
     function showpass(){
     var btn = document.getElementById("Password").type ;
