@@ -36,6 +36,11 @@
 </div>
 </section>
 <script>
+       var  uname = localStorage.getItem("loggedname");
+         if (uname==null){
+     alert("You are not logged in. Please log in");
+     window.location="../index.html";
+   }
   const keyvalues = window.location.search;
      const value = new URLSearchParams(keyvalues);
      const idvalue = value.get('team');
