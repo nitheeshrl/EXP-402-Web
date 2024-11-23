@@ -43,7 +43,7 @@
       </div>
     </div>
     <div style="display: flex; gap: 20px;align-items: center;justify-content: center;">
-      <button style="width: 50%;" name="btl" type="submit" onclick="login()" type="button" ><div class="btn-text">Login</div></button>
+      <button style="width: 50%;" name="btl" type="submit" id="log-btn" onclick="login()" type="button" ><div class="btn-text">Login</div></button>
       <a style="margin-top: 20px; text-decoration: none;color: #d78623;" href="forgot-pass.html">Forgot Password</a>
     </div>
 
@@ -60,6 +60,15 @@
       ></div>
   </div> 
   <script src="https://unpkg.com/@simplewebauthn/browser/dist/bundle/index.umd.min.js"></script>
+  <script>
+    var input = document.getElementById("Password");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("log-btn").click();
+      }
+    });
+    </script>
 <script>
        
 const  GetUniqueID = () =>{
