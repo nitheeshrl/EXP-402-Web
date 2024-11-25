@@ -105,6 +105,10 @@ console.log(data[index])
 var finalout ="";
 for(var k=0; k<heads.length;k++){
   var dd =data[index][k].toString();
+  if (k==3){
+    data[index][k] = data[index][k].split("\n");
+    data[index][k] = data[index][k].join("<br>");
+  }
   if(dd.includes("drive.google.com")){
   if (heads[k].includes("photo")&&k!==10){
     var url = data[index][k].split("/");
