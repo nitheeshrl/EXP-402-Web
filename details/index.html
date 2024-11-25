@@ -106,7 +106,7 @@ var finalout ="";
 for(var k=0; k<heads.length;k++){
   var dd =data[index][k].toString();
   if(dd.includes("drive.google.com")){
-  if (heads[k].includes("photo")){
+  if (heads[k].includes("photo")&&k!==10){
     var url = data[index][k].split("/");
     var temp =
 `<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
