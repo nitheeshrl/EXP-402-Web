@@ -119,6 +119,16 @@ for(var k=0; k<heads.length;k++){
  <img style="width: 45%;" src="https://drive.google.com/thumbnail?id=`+url[5]+`&sz=w1000" alt="">
 </div>`;
   }
+  else if (dd.includes("docs.google.com")){
+    var temp =
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
+ <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
+ <span style="font-weight: bold;">:</span>
+ <div style="width: 45%;">
+ <a class="btn" href="`+data[index][k]+`" alt="">View Doc</a>
+</div>
+ </div>`;
+  }
   else{
     var temp =
 `<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
