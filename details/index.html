@@ -109,7 +109,7 @@ for(var k=0; k<heads.length;k++){
     data[index][k] = data[index][k].split("\n");
     data[index][k] = data[index][k].join("<br>");
   }
-  if(dd.includes("drive.google.com")){
+  if(dd.includes("drive.google.com")||dd.includes("docs.google.com")){
   if (heads[k].includes("photo")&&k!==10){
     var url = data[index][k].split("/");
     var temp =
