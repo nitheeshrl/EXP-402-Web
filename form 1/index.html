@@ -193,17 +193,30 @@ console.log(formDataString)
           }
         )
 
-          .then(function (response) {
+          .then(async function (response) {
 
             // Check if the request was successful
             if (response) {
-         
+              const result1 = await response.json();
+            console.log(result1.data2);
+            if (result1.data2 == "accept"){
+            // Display a success message
+            document.getElementById("bt").disabled = false;
+            document.getElementById("form").reset();
+            window.location='submission.html';
+            setTimeout(function () {
+              document.getElementById("message").textContent = "";
+              document.getElementById("message").style.display = "none";
+            }, 2600);}
+            else if (result1.data2 == "reject"){
+              window.location='reject.html';
+            }
               return response; // Assuming your script returns JSON response
             } else {
               throw new Error("Failed to submit the form.");
             }
           })
-          .then(async function (data) {
+        /*  .then(async function (data) {
             const result1 = await data.json();
             console.log(result1.data2);
             if (result1.data2 == "accept"){
@@ -218,7 +231,7 @@ console.log(formDataString)
             else if (result1.data2 == "reject"){
               window.location='reject.html';
             }
-          })
+          })*/
 
           .catch(function (error) {
             // Handle errors, you can display an error message here
