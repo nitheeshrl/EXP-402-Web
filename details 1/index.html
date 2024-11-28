@@ -50,7 +50,6 @@ var heads = JSON.parse(jheads);
 if (heads==null ){
 
        async     function fetchd (){
-       
        var details ="";
       await fetch(
     
@@ -100,6 +99,9 @@ console.log(data[index])
 var finalout ="";
 for(var k=0; k<heads.length;k++){
   var dd =data[index][k].toString();
+  const regex = /\n/g;
+  data[index][k] = dd.replace(regex,"<br>");
+
   if(dd.includes("drive.google.com")){
   if (heads[k].includes("photo")){
     var url = data[index][k].split("/");
