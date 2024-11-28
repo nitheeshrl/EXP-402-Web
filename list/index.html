@@ -284,7 +284,7 @@ var theadth =
     if(searchdata.value==""){
       
       var detail = createtable(r[k]);
-      details = details +"<tr>" +detail+`<td><button class="btn" style="background-color: #d78623;padding:5px;" onclick=" window.open('/details%201/index.html?team=`+r[k][hindex]+`', '_blank')" href="">View Details</button></td>`+"</tr>";
+      details = details +"<tr>" +detail+`<td><button class="btn" style="background-color: #d78623;padding:5px;" onclick=" window.open('/details/index.html?team=`+r[k][hindex]+`', '_blank')" href="">View Details</button></td>`+"</tr>";
     }
     else{
 var tabledata = r[k].join("");
@@ -292,7 +292,7 @@ var tdata =tabledata.toLowerCase();
 var sdata =searchdata.value.toLowerCase();
 if (tdata.includes(sdata)){
  var detail = createtable(r[k]);
- details = details +"<tr>" +detail+`<td><button class="btn" style="background-color: #d78623;padding:5px;" onclick=" window.open('/details%201/index.html?team=`+r[k][hindex]+`', '_blank')" href="">View Details</button></td>`+"</tr>";
+ details = details +"<tr>" +detail+`<td><button class="btn" style="background-color: #d78623;padding:5px;" onclick=" window.open('/details/index.html?team=`+r[k][hindex]+`', '_blank')" href="">View Details</button></td>`+"</tr>";
 }
     }
 
