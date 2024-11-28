@@ -216,7 +216,7 @@ height: 40px;
 
 var hindex = heads.findIndex(x => x == "Name"); 
 var headth ="" ;
-for(var b=0; b<heads.length;b++){
+for(var b=0; b<heads.length-9;b++){
 var temp =
 `<th><b>`+heads[b]+`</b></th>
 `;
@@ -229,7 +229,7 @@ var theadth =
 </thead>
 `;
 
-   for(var k=0; k<r.length-1;k++){
+   for(var k=0; k<r.length;k++){
   
     const searchdata = document.querySelector('.input-group input');
     if(searchdata.value==""){
@@ -251,7 +251,7 @@ if (tdata.includes(sdata)){
     function createtable(r){
       
       var detail ="";
-      for(var j=0; j<r.length;j++){
+      for(var j=0; j<r.length-9;j++){
         
         var value = String (r[j]);
         
