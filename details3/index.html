@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="widthdevice-width, initial-scale=1">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <title id="formtitle">EXP 402 Experiential Learning II</title>      
+    <link rel="stylesheet" href="style.css" />
+ 
+</head>    
+<body>
+<section class="header">
+<div>
+<img src="white_logo.png" alt="">
+</div>
+<div>
+<h1>EXP 402 Experiential Learning II</h1>
+</div>
+</section>
+
+<section style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+<div style="padding: 10px;background: white;border-radius: 5px;max-width: 900px;width: 100%;" id="details">
+</div>
+</section>
+<div id="load" class="load" > 
+  <div class="loader" id="loader"> 
+
+    </div> 
+    <div
+      id="message"
+    class="message"
+      ></div>
+  </div> 
+  </div> 
+</div>
+</section>
+<script>
+       var  uname = localStorage.getItem("loggedname");
+         if (uname==null){
+     alert("You are not logged in. Please log in");
+     window.location="../index.html";
+   }
+  const keyvalues = window.location.search;
+     const value = new URLSearchParams(keyvalues);
+     const idvalue = value.get('team');
+     document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Fetching Details....";
+async function fetcholdd(){
+   var jdata =sessionStorage.getItem("detaildatas");
+   var jheads =sessionStorage.getItem("detailheads");
+var data = JSON.parse(jdata);
+var heads = JSON.parse(jheads);
+if (heads==null ){
+
+       async     function fetchd (){
+       
+       var details ="";
+      await fetch(
+    
+    "https://script.google.com/macros/s/AKfycbwvEUmJ6EuyT9obS4yArsV10S7eIPyQj_DOnQ53-gDf7Ry5Ayrwr7q6-5Q8nrYHamkJ/exec",
+    {
+      redirect: "follow",
+      method: "POST",
+      body: "1q4plNnvsvbOWHpSPj8dh2j70M_SNOyqNr1tmOeiq2WQ",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+    }
+   )
+   
+    .then(function (response) {
+   
+      // Check if the request was successful
+      if (response) {
+   
+        return response; // Assuming your script returns JSON response
+      } else {
+        throw new Error("Failed to fetch.");
+      }
+    })
+    .then(async function (data) {
+   const result1 = await data.json();
+   
+details = result1.data2
+
+})
+return details;
+      }
+      var dff = await fetchd ();
+      console.log(dff)
+        data = dff[0];
+   heads = dff[1][0];
+
+
+          }
+          console.log(data,heads)
+var hindex = "";
+hindex = heads.findIndex(x => x == "Gp no."); 
+console.log(hindex)
+var index = "";
+index = data.findIndex(x => x[hindex] == idvalue); 
+console.log(data[index])
+var finalout ="";
+for(var k=0; k<heads.length;k++){
+  var dd =data[index][k].toString();
+  if (k==3){
+    data[index][k] = data[index][k].split("\n");
+    data[index][k] = data[index][k].join("<br>");
+  }
+  if(dd.includes("drive.google.com")||dd.includes("docs.google.com")){
+  if (heads[k].includes("photo")&&k!==10){
+    var url = data[index][k].split("/");
+    var temp =
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
+ <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
+ <span style="font-weight: bold;">:</span>
+ <img style="width: 45%;" src="https://drive.google.com/thumbnail?id=`+url[5]+`&sz=w1000" alt="">
+</div>`;
+  }
+  else if (dd.includes("docs.google.com")){
+    var temp =
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
+ <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
+ <span style="font-weight: bold;">:</span>
+ <div style="width: 45%;">
+ <a class="btn" href="`+data[index][k]+`" alt="">View Doc</a>
+</div>
+ </div>`;
+  }
+  else{
+    var temp =
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
+ <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
+ <span style="font-weight: bold;">:</span>
+ <div style="width: 45%;">
+ <a class="btn" href="`+data[index][k]+`" alt="">View PDF</a>
+</div>
+ </div>`;
+  }
+}
+  else{
+    var temp =
+`<div style="display: flex;justify-content: space-evenly;gap:10px;margin-top:20px;margin-bottom:20px;">
+ <span style="font-weight: bold;width: 45%;">`+heads[k]+`</span>
+ <span style="font-weight: bold;">:</span>
+ <span style="width: 45%;">`+data[index][k]+`</span>
+</div>`;
+  }
+finalout +=temp
+
+ }
+ document.getElementById("details").innerHTML =finalout;
+document.getElementById("load").style.display="none";
+}
+fetcholdd();
+setInterval(() => {
+  fetcholdd();
+  }, 1000)
+</script>
+</body>
+</html>

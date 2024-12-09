@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="white_logo.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Report on visit to Kals Breweries Pvt. Ltd</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style 1.css" />
+    <link rel="stylesheet" type="text/css" href="style 2.css">
+    <style>
+         table .approve{
+            border-radius: 20px;
+            padding: 10px;
+            color: white;
+            font-weight: bolder;
+    background-color: green;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+ table .decline{
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    background-color: red;
+    margin-right: 20px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .tablebee{
+    display: none;
+}
+.btn{
+    background-color:#182d8b;
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .btn1{
+    background-color:#182d8b;
+height: 40px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding:12px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+    </style>
+    <script>
+     var  uname = localStorage.getItem("loggedname");
+         if (uname==null){
+     alert("You are not logged in. Please log in");
+     window.location="../index.html";
+   }
+
+    </script>
+</head>
+
+<body>
+
+  <section class="header2">
+    <div style="display: flex;flex-direction: row;align-items: center;">
+    <div>
+    <img src="white_logo.png" alt="">
+    </div>
+    <div>
+    <h1>EXP 402 Experiential Learning II</h1>
+    </div>
+  </div>
+  <div class="logname">
+<span style="margin-left: 20px;" id="log-name"></span>
+<button style="border: none;background: none;" onclick="logoutPopup()">
+<svg fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+</button>  
+</div>
+    </section>
+    <main style="margin-top: 30px;" class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Report on visit to Kals Breweries Pvt. Ltd</h1>
+
+            <div class="input-group">
+                <input  type="search" placeholder="Search..." >
+                <img src="images/search.png" alt="">
+            </div>
+
+        </section>
+
+        <section id="tablebee" class="tablebee">         
+          <section  class="table__body" >
+      
+            
+            
+                  <table  id="tabdetails">
+
+                </table>
+         
+          </section>
+      </section>  
+
+    <section class="msg" >
+
+        <h1 style="text-align: center;"></h1>
+        <div   id="dfiled" style="align-content:normal; margin-left: 0px;margin-right: auto; margin-top: 30px;"><p style="text-align: left;">
+            <div ></div> <span id = "status"></span></p></div>
+            </p>
+            </section>
+            <section style="height: 100px; display: flex;justify-content: center;">
+      
+            </section>
+    </main>
+    <div id="load" class="load" > 
+        <div class="loader" id="loader"> 
+      
+          </div> 
+          <div
+            id="message"
+          class="message"
+          style="width: 350px;"
+            ></div>
+        </div>      
+  
+    <div class="popup" id="popup-1">
+ 
+        <div class="overlay"></div>
+    
+        <div class="content">
+    
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+    
+        <h1 style="margin-top: 50px;">Confirm Update Approval</h1>
+    
+        <p style="margin-bottom: 40px;">Are you sure you wish to approve the Brochure details update? </p>
+        <div >
+            <input id="aid" type="hidden" value="">
+    <a class="btn" id="apbt" onclick="approve()">Confirm</a>
+    <a class="btn" onclick="togglePopup()">Cancel</a>
+        </div>
+        </div>
+        </div>
+    <div class="popup" id="popup-2">
+
+        <div class="overlay"></div>
+    
+        <div class="content" style="height:400px;">
+    
+        <div class="close-btn" onclick="togglePopup2()">&times;</div>
+    
+        <h1 style="margin-top: 50px;">Confirm Update Decline</h1>
+    
+        <p style="margin-bottom: 40px;">Are you sure you wish to decline the Brochure details update? </p>
+        <div >
+            <div class="form-element" style=" flex-direction: column;align-items: flex-start; width: 100%;margin-bottom: 40px;">
+                <span class="q" >Reason for decline</span>
+                <input type="text" name="Reason" id="Reason" style="width: 100%;" placeholder="Enter the reason" />
+                </div>
+                <input id="did" type="hidden" value="">
+    <a class="btn" id="decbt" onclick="decline()" style="background-color: red;">Decline</a>
+    <a class="btn" onclick="togglePopup2()">Cancel</a>
+        </div>
+        </div>
+    
+        </div>
+        <div class="popup" id="popup-3">
+ 
+          <div class="overlay"></div>
+      
+          <div class="content">
+      
+          <div class="close-btn" onclick="togglePopup3()">&times;</div>
+      
+          <h1 style="margin-top: 50px;">Are you sure to logout?</h1>
+      
+          <p style="margin-bottom: 40px;"> </p>
+          <div style="margin-top: 50px;">
+              <input id="aid" type="hidden" value="">
+      <a class="btn" style="background: #d78623;" id="apbt" onclick="logout()">Yes</a>
+      <a class="btn" style="background: #d78623;" onclick="togglePopup3()">Cancel</a>
+          </div>
+          </div>
+      
+          </div>
+    <script src="script.js"></script>
+ <script>
+ var logggedname  = localStorage.getItem("loggedname");
+ document.getElementById("log-name").textContent = logggedname;
+        function approvePopup(id){
+            
+    document.getElementById("popup-1").classList.toggle("active");
+    document.getElementById("aid").value = id;
+    
+    }
+    function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+    }
+    function declinePopup(id){
+        
+    document.getElementById("popup-2").classList.toggle("active");
+    document.getElementById("did").value = id;
+    
+    }
+    function togglePopup2(){
+    document.getElementById("popup-2").classList.toggle("active");
+    }
+    function togglePopup3(){
+   document.getElementById("popup-3").classList.toggle("active");
+   }  
+   function logout(){
+    
+    localStorage.removeItem("loggedname")
+    window.location="../logout.html";
+  }
+   function logoutPopup(){
+        console.log("ok")
+document.getElementById("popup-3").classList.toggle("active");
+
+}
+    document.getElementById("load").style.display="initial";
+            document.getElementById("loader").style.display="block"; 
+            document.getElementById("message").textContent = "Fetching Responses....";
+            function fetchd (){
+       
+       var details ="";
+       fetch(
+    
+    "https://script.google.com/macros/s/AKfycbwvEUmJ6EuyT9obS4yArsV10S7eIPyQj_DOnQ53-gDf7Ry5Ayrwr7q6-5Q8nrYHamkJ/exec",
+    {
+      redirect: "follow",
+      method: "POST",
+      body: "1q4plNnvsvbOWHpSPj8dh2j70M_SNOyqNr1tmOeiq2WQ",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+    }
+   )
+   
+    .then(function (response) {
+   
+      // Check if the request was successful
+      if (response) {
+   
+        return response; // Assuming your script returns JSON response
+      } else {
+        throw new Error("Failed to fetch.");
+      }
+    })
+    .then(async function (data) {
+   const result1 = await data.json();
+   
+   var r = result1.data2[0];
+   var heads = result1.data2[1][0];
+   var sr = JSON.stringify(r);
+   var sheads = JSON.stringify(heads);
+   sessionStorage.setItem("detailheads",sheads);
+   sessionStorage.setItem("detaildatas",sr);
+
+
+var hindex = heads.findIndex(x => x == "Gp no."); 
+var headth ="" ;
+for(var b=0; b<heads.length;b++){
+var temp =
+`<th><b>`+heads[b]+`</b></th>
+`;
+headth+=temp;
+}
+var theadth = 
+`<thead>
+  `+headth+`
+ <th><b>Full Info</b></th> 
+</thead>
+`;
+
+   for(var k=0; k<r.length-1;k++){
+  
+    const searchdata = document.querySelector('.input-group input');
+    if(searchdata.value==""){
+      
+      var detail = createtable(r[k]);
+      details = details +"<tr>" +detail+`<td><button class="btn" style="background-color: #d78623;padding:5px;" onclick=" window.open('/details3/index.html?team=`+r[k][hindex]+`', '_blank')" href="">View Details</button></td>`+"</tr>";
+    }
+    else{
+var tabledata = r[k].join("");
+var tdata =tabledata.toLowerCase();
+var sdata =searchdata.value.toLowerCase();
+if (tdata.includes(sdata)){
+ var detail = createtable(r[k]);
+ details = details +"<tr>" +detail+`<td><button class="btn" style="background-color: #d78623;padding:5px;" onclick=" window.open('/details3/index.html?team=`+r[k][hindex]+`', '_blank')" href="">View Details</button></td>`+"</tr>";
+}
+    }
+
+    
+    function createtable(r){
+      
+      var detail ="";
+      for(var j=0; j<r.length;j++){
+        
+        var value = String (r[j]);
+        
+        if (value.includes("drive.google.com")||value.includes("docs.google.com")){
+          var vdetail =
+`<td><a href="`+r[j]+`">View</a></td>
+`;
+        }
+        else{
+          var raw =String (r[j]);
+  
+          if (raw.includes("\n")){
+         
+          
+          
+  var graw  = raw.split("\n");
+     
+     var hhp = graw.join("<br><br>");
+
+          var vdetail =
+`<td>`+hhp+`</td>
+`;
+}
+else{
+  var vdetail =
+`<td>`+r[j]+`</td>
+`;
+}
+        }
+
+detail += vdetail
+      }
+       return detail;
+      }
+      
+
+   }
+   var tdata = 
+`
+<tbody>
+  `+details+`
+</<tbody>
+`;
+
+
+   if (details!==""){
+ 
+   document.getElementById("tabdetails").innerHTML = theadth + tdata;
+   document.getElementById("tablebee").style.display = "initial";
+   document.getElementById("status").style.display = "none";
+   }
+   else{
+     document.getElementById("tablebee").style.display = "none";
+       document.getElementById("status").style.display = "initial";
+       document.getElementById("status").textContent = "No Responses";
+
+   }
+   document.getElementById("loader").style.display="none"; 
+                   document.getElementById("message").textContent = "";
+                   document.getElementById("load").style.display = "none";
+
+  
+   })
+   
+   .catch(function (error) {
+   // Handle errors, you can display an error message here
+   console.error(error);
+   document.getElementById("loader").style.display="none"; 
+   document.getElementById("message").textContent =
+   "Failed to fetch.";
+   document.getElementById("message").style.display = "block";
+   });
+      }
+       fetchd ();
+       setInterval(() => {
+        fetchd ();
+  }, 1000)
+   
+    </script>
+</body>
+
+</html>
