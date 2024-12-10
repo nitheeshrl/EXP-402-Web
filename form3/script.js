@@ -27,7 +27,18 @@ function clickupload(folurl,fol,ii){
     console.log(file1.className)
     console.log(fol)
     console.log(file1.value)
-    if (file1.value.includes(".pdf")||file1.value.includes(".jpg")||file1.value.includes(".PDF")){
+   var rsup =  file1.accept;
+   var sups = rsup.split(",");
+   var supp = "";
+   for(var r=0; r<sups.length; r++){
+    if(r!==sups.length){
+    supp += `file1.value.includes("`+sups[r]+`")||`;
+    }
+    else{
+        supp += `file1.value.includes("`+sups[r]+`")`;  
+    }
+   }
+    if (supp){
             document.getElementById("loader").style.display="block"; 
             document.getElementById("load").style.display="initial";
             document.getElementById("message").textContent="Uploading....";
